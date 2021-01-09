@@ -1,7 +1,9 @@
 baseURL = "http://example.org/"
 languageCode = "ja"
 title = "s-miyamo.dev testPage"
+
 publishDir = "docs"
+canonifyurls = true
 
 # Geekdoc required configuration
 pygmentsUseClasses = true
@@ -16,3 +18,4 @@ disablePathToLower = true
 	  [markup.tableOfContents]
 	  startLevel = 1
 	  endLevel = 9
+
