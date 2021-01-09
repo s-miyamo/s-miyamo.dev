@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on s-miyamo.dev testPage</title>
-    <link>https://s-miyamo.github.io/s-miyamo.dev/categories/</link>
+    <link>https://s-miyamo.dev/categories/</link>
     <description>Recent content in Categories on s-miyamo.dev testPage</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language><atom:link href="https://s-miyamo.github.io/s-miyamo.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja</language><atom:link href="https://s-miyamo.dev/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
