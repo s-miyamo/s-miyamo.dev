@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>s-miyamo.dev testPage</title>
-    <link>http://example.org/</link>
+    <link>http://s-miyamo.github.io/</link>
     <description>Recent content on s-miyamo.dev testPage</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja</language><atom:link href="http://s-miyamo.github.io/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
