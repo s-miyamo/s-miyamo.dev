@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Test">
+<meta name="description" content="Apex1">
 
-<title>Test | s-miyamo.dev testPage</title>
+<title>Apex1 | s-miyamo.dev testPage</title>
 
 <link rel="icon" href="https://s-miyamo.dev/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -116,7 +116,7 @@
             
             
                 <span class="flex">
-                    <a href="https://s-miyamo.dev/posts/apex1/" class="gdoc-nav__entry ">
+                    <a href="https://s-miyamo.dev/posts/apex1/" class="gdoc-nav__entry is-active">
                         Apex1
                     </a>
                 </span>
@@ -139,7 +139,7 @@
             
             
                 <span class="flex">
-                    <a href="https://s-miyamo.dev/posts/Salesforce/Apex/test/" class="gdoc-nav__entry is-active">
+                    <a href="https://s-miyamo.dev/posts/Salesforce/Apex/test/" class="gdoc-nav__entry ">
                         Test
                     </a>
                 </span>
@@ -201,12 +201,12 @@
                 
     <article class="gdoc-markdown gdoc-post">
       <header class="gdoc-post__header">
-        <h1 class="gdoc-post__title">Test</h1>
+        <h1 class="gdoc-post__title">Apex1</h1>
         <div class="gdoc-post__date">
             <svg class="icon date"><use xlink:href="#date"></use></svg>
-            <time datetime="2021-01-09T23:45:59&#43;09:00">
+            <time datetime="2021-01-11T22:02:19&#43;09:00">
                 
-                Jan 9, 2021
+                Jan 11, 2021
             </time>
         </div>
       </header>
@@ -218,7 +218,29 @@
     
 
 
-<p>fogafoga</p>
+<h1 id="はじめに">はじめに</h1>
+<p>この記事は、宮本が24歳の夏を共に過ごした、Salesforce内部で使用される「Apex」言語についてなるたけわかりやすく説明しようと試みたものです。
+気が向いた時に加筆・修正をしていこうと思います。
+対象は「Apex? ApexLegendsのことね。なるほどなるほど。レイスたんちゅっちゅ」みたいな人を対象にしています。コーダ向けではありません。</p>
+<h1 id="apexとは">Apexとは？</h1>
+<p>まずApexとは何かを知りたい場合は、以下のURLを見てください。
+<a href="https://developer.salesforce.com/docs/atlas.ja-jp.apexcode.meta/apexcode/apex_intro_what_is_apex.htm">https://developer.salesforce.com/docs/atlas.ja-jp.apexcode.meta/apexcode/apex_intro_what_is_apex.htm</a></p>
+<p>Salesforce社の日本語ドキュメントは、機械翻訳なのか何か分かりませんが非常に癖があるように私は感じます。というかまずJavaをやったほうが良いです。話はそれから。</p>
+<h1 id="とりあえずhello-world">とりあえずHello World</h1>
+<p>百聞は一見にしかず、まずはApexを書いてみましょう。
+そのために、まず個人で使えるSalesforce環境を手に入れる必要があります。
+<a href="https://developer.salesforce.com/jpblogs/2016/04/developer-edition-signup/">https://developer.salesforce.com/jpblogs/2016/04/developer-edition-signup/</a></p>
+<h1 id="apex">Apex</h1>
+<p>Apexを用いてコードを書く際は、「ガバナ制限」を特に考慮する必要があります。
+この「ガバナ制限」は、簡単に言うと「他の人も使っている環境でコードを動かすからあんまりピーキーなことすんなボケ」制限です。</p>
+<p>Apexを使用する際、結構な頻度でオブジェクト（Oracleでいうテーブル）に対しての操作も行われる印象があります。つまり結構な頻度でガバナ制限と向き合うことが</p>
+<p>このガバナ制限を考慮せずに書いたコードは、大半の確立で落ちるか上手く動きません。</p>
+<ul>
+<li>ガバナ制限</li>
+<li>sObjectの取り扱い</li>
+<li>sObjectとコレクション</li>
+<li>テストクラス</li>
+</ul>
 
 
       </div>
