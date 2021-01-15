@@ -23,7 +23,7 @@ https://developer.salesforce.com/jpblogs/2016/04/developer-edition-signup/
 
 環境を手に入れたら早速コードを書いてみましょう。右上にある歯車マークのボタンを押すと「開発者コンソール」がしれっと居るので、押してみましょう。
 
-![開発者コンソールを開く](apex01-2.png)
+![開発者コンソールを開く](apex01-1.png)
 
 
 ### Apex
