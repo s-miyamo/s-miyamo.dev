@@ -292,6 +292,26 @@
 リストビューを「すべての取引先」にして先ほど登録した「フグ田 マスオ」がいることを確認します。
 <img src="apex1-10.png" alt="apex1-10"></p>
 <p><img src="apex1-11.png" alt="apex1-11"></p>
+<p>見事に顧客を作ることができました！素晴らしいですね。
+この3行だけで顧客を作成することができます。しかしこんな簡単なコードですが大事なことが詰まっています。
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Account</span> <span class="n">acc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Account</span><span class="o">();</span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>上記は何をしているかというと、Account型のsObject変数「acc」を宣言して、新規作成したsObjectインスタンスを割り当てています。
+いきなり訳の分からないワードが出てきました。のんびり、そうコーヒーとチョコでもつまみながらゆっくり読み解いていきましょう。</p>
+<div class="gdoc-page__anchorwrap"><h2 id="sobjectの取り扱い">sObjectの取り扱い<a data-clipboard-text="https://s-miyamo.dev/posts/Salesforce/Apex/apex1/#sobjectの取り扱い" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor sObjectの取り扱い" href="#sobjectの取り扱い"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="sobjectとコレクション">sObjectとコレクション<a data-clipboard-text="https://s-miyamo.dev/posts/Salesforce/Apex/apex1/#sobjectとコレクション" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor sObjectとコレクション" href="#sobjectとコレクション"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="ガバナ制限">ガバナ制限<a data-clipboard-text="https://s-miyamo.dev/posts/Salesforce/Apex/apex1/#ガバナ制限" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor ガバナ制限" href="#ガバナ制限"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<p>Apexを用いてコードを書く際は、「ガバナ制限」を特に考慮する必要があります。
+この「ガバナ制限」は、簡単に言うと「他の人も使っている環境でコードを動かすからあんまりピーキーなことすんなボケ」制限です。</p>
+<p>Apexを使用する際、結構な頻度でオブジェクト（Oracleでいうテーブル）に対しての操作も行われる印象があります。つまり結構な頻度でガバナ制限と向き合うことが</p>
+<p>このガバナ制限を考慮せずに書いたコードは、大半の確立で落ちるか上手く動きません。</p>
+<div class="gdoc-page__anchorwrap"><h2 id="テストクラス">テストクラス<a data-clipboard-text="https://s-miyamo.dev/posts/Salesforce/Apex/apex1/#テストクラス" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor テストクラス" href="#テストクラス"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <div class="gdoc-page__anchorwrap"><h2 id="apexバッチ">Apexバッチ<a data-clipboard-text="https://s-miyamo.dev/posts/Salesforce/Apex/apex1/#apexバッチ" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Apexバッチ" href="#apexバッチ"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <p>この勢いのままコードを書いてみましょう。男と女のラブゲームと同じように、勢いが大事な時もあります。知りませんが。
 File &gt; New &gt; Apex Classとボタンを押下すると「New Apex class」のウィンドウが出てきます。
@@ -300,17 +320,6 @@ File &gt; New &gt; Apex Classとボタンを押下すると「New Apex class」�
 <img src="apex1-04.png" alt="apex1-03"></p>
 <p>開くと以下の画像のような状態になっていると思います。
 ここから、コードを修正していきましょう。</p>
-<div class="gdoc-page__anchorwrap"><h2 id="apex">Apex<a data-clipboard-text="https://s-miyamo.dev/posts/Salesforce/Apex/apex1/#apex" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Apex" href="#apex"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
-<p>Apexを用いてコードを書く際は、「ガバナ制限」を特に考慮する必要があります。
-この「ガバナ制限」は、簡単に言うと「他の人も使っている環境でコードを動かすからあんまりピーキーなことすんなボケ」制限です。</p>
-<p>Apexを使用する際、結構な頻度でオブジェクト（Oracleでいうテーブル）に対しての操作も行われる印象があります。つまり結構な頻度でガバナ制限と向き合うことが</p>
-<p>このガバナ制限を考慮せずに書いたコードは、大半の確立で落ちるか上手く動きません。</p>
-<ul>
-<li>ガバナ制限</li>
-<li>sObjectの取り扱い</li>
-<li>sObjectとコレクション</li>
-<li>テストクラス</li>
-</ul>
 
 
       </div>
