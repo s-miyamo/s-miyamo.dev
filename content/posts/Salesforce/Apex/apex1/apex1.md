@@ -27,9 +27,44 @@ https://developer.salesforce.com/jpblogs/2016/04/developer-edition-signup/
 
 ![開発者コンソールを開く](apex1-02.png)
 
-この勢いのままコードを書いてみましょう。男と女のラブゲームと同じように、勢いが大事な時もあります。知りませんけど。
+次に画面上部のDebug > Open Execute Anonymous Windowの順にボタンを押下します。
+![apex1-06_anonymous](apex1-06_anonymous)
 
-{{< highlight java "linenos=table, hl_lines=3" >}}
+「Enter Apex Code」のウィンドウが出てくるので、以下のコードを入力し「Execute」ボタンを押下しましょう。
+{{< highlight java "linenos=table" >}}
+System.debug('Hello World');
+{{< /highlight >}}
+
+「Execute」ボタンを押下しても何も反応がありませんが、ご安心ください。
+画面下部の「Logs」タブに何やらログが吐き出されているみたいなので開いて確認してみましょう。
+ログをダブルクリックすると詳細が表示されます。
+![apex1-07_logs](apex1-07_logs)
+
+開いてみると難しそうなログがたくさん出力されています。
+![apex1-08_logs2](apex1-08_logs2)
+
+これでは分からないので、ログ出力エリアの下部にある「Debug Only」にチェックを入れてみましょう。
+![apex1-09](apex1-09)
+
+おお！「Hello World」と出力されているではありませんか！
+ここまでできたあなたは最高です。これは小さなことに見えますが、あなたにとっては偉大な一歩であります。
+
+とはいえ、やはり文字を出力するだけでは味気ないのも事実です。
+それならSalesforceっぽいことをしてみましょう。
+
+### Apexバッチ
+
+この勢いのままコードを書いてみましょう。男と女のラブゲームと同じように、勢いが大事な時もあります。知りませんが。
+File > New > Apex Classとボタンを押下すると「New Apex class」のウィンドウが出てきます。
+![apex1-03](apex1-03.png)
+
+「Please enter a name for your new Apex class」に「Batch_test」と入力し「OK」ボタンを押下します。
+![apex1-03](apex1-04.png)
+
+開くと以下の画像のような状態になっていると思います。
+ここから、コードを修正していきましょう。
+
+{{< highlight java "linenos=table">}}
 public class Main {
     public static void main(String... args) {
        System.out.println("Hello");

@@ -246,20 +246,50 @@
 <p>環境を手に入れたら早速コードを書いてみましょう。右上にある歯車マークのボタンを押すと「開発者コンソール」がしれっと居るので、押してみましょう。</p>
 <p>開くと以下のようなウィンドウが出てきます。おめでとうございます！これでApexを書く準備が整いました。環境を手に入れたあなたは鬼に金棒、どんな世界へも羽ばたいていけることでしょう。</p>
 <p><img src="apex1-02.png" alt="開発者コンソールを開く"></p>
-<p>この勢いのままコードを書いてみましょう。男と女のラブゲームと同じように、勢いが大事な時もあります。知りませんけど。</p>
+<p>次に画面上部のDebug &gt; Open Execute Anonymous Windowの順にボタンを押下します。
+<img src="apex1-06_anonymous" alt="apex1-06_anonymous"></p>
+<p>「Enter Apex Code」のウィンドウが出てくるので、以下のコードを入力し「Execute」ボタンを押下しましょう。
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">System</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="err">&#39;</span><span class="n">Hello</span> <span class="n">World</span><span class="err">&#39;</span><span class="o">);</span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>「Execute」ボタンを押下しても何も反応がありませんが、ご安心ください。
+画面下部の「Logs」タブに何やらログが吐き出されているみたいなので開いて確認してみましょう。
+ログをダブルクリックすると詳細が表示されます。
+<img src="apex1-07_logs" alt="apex1-07_logs"></p>
+<p>開いてみると難しそうなログがたくさん出力されています。
+<img src="apex1-08_logs2" alt="apex1-08_logs2"></p>
+<p>これでは分からないので、ログ出力エリアの下部にある「Debug Only」にチェックを入れてみましょう。
+<img src="apex1-09" alt="apex1-09"></p>
+<p>おお！「Hello World」と出力されているではありませんか！
+ここまでできたあなたは最高です。これは小さなことに見えますが、あなたにとっては偉大な一歩であります。</p>
+<p>とはいえ、やはり文字を出力するだけでは味気ないのも事実です。
+それならSalesforceっぽいことをしてみましょう。</p>
+<div class="gdoc-page__anchorwrap"><h3 id="apexバッチ">Apexバッチ<a data-clipboard-text="https://s-miyamo.dev/posts/Salesforce/Apex/apex1/apex1/#apexバッチ" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Apexバッチ" href="#apexバッチ"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
+<p>この勢いのままコードを書いてみましょう。男と女のラブゲームと同じように、勢いが大事な時もあります。知りませんが。
+File &gt; New &gt; Apex Classとボタンを押下すると「New Apex class」のウィンドウが出てきます。
+<img src="apex1-03.png" alt="apex1-03"></p>
+<p>「Please enter a name for your new Apex class」に「Batch_test」と入力し「OK」ボタンを押下します。
+<img src="apex1-04.png" alt="apex1-03"></p>
+<p>開くと以下の画像のような状態になっていると思います。
+ここから、コードを修正していきましょう。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="hl"><span class="lnt">3
-</span></span><span class="lnt">4
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-<span class="hl">       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Hello&#34;</span><span class="o">);</span>
-</span>    <span class="o">}</span>
+       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Hello&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
 <span class="o">}</span></code></pre></td></tr></table>
 </div>
 </div>
