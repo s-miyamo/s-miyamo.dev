@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 11 Jan 2021 22:02:19 +0900</lastBuildDate><atom:link href="https://s-miyamo.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apex入門1</title>
-      <link>https://s-miyamo.dev/posts/Salesforce/Apex/apex1/apex1/</link>
+      <link>https://s-miyamo.dev/posts/Salesforce/Apex/apex1/</link>
       <pubDate>Mon, 11 Jan 2021 22:02:19 +0900</pubDate>
       
-      <guid>https://s-miyamo.dev/posts/Salesforce/Apex/apex1/apex1/</guid>
+      <guid>https://s-miyamo.dev/posts/Salesforce/Apex/apex1/</guid>
       <description>はじめに この記事は、宮本が24歳の夏を共に過ごした、Salesforce内部で使用される「Apex」言語についてなるたけわかりやすく説明しようと試みたものです。 気が向いた時に加筆・修正をしていこうと思います。 対象は「Apex? ApexLegendsのことね。なるほどなるほど。レイスたんちゅっちゅ」みたいな人を対象にしています。コーダ向けではありません。
 Apexとは？ まずApexとは何かを知りたい場合は、以下のURLを見てください。 https://developer.salesforce.com/docs/atlas.ja-jp.apexcode.meta/apexcode/apex_intro_what_is_apex.htm
 Salesforce社の日本語ドキュメントは、機械翻訳なのか何か分かりませんが非常に癖があるように私は感じます。
