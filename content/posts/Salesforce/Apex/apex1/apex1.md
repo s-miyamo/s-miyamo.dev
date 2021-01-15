@@ -23,8 +23,19 @@ https://developer.salesforce.com/jpblogs/2016/04/developer-edition-signup/
 
 環境を手に入れたら早速コードを書いてみましょう。右上にある歯車マークのボタンを押すと「開発者コンソール」がしれっと居るので、押してみましょう。
 
-![開発者コンソールを開く](apex01-1.png)
+開くと以下のようなウィンドウが出てきます。おめでとうございます！これでApexを書く準備が整いました。環境を手に入れたあなたは鬼に金棒、どんな世界へも羽ばたいていけることでしょう。
 
+![開発者コンソールを開く](apex1-02.png)
+
+この勢いのままコードを書いてみましょう。男と女のラブゲームと同じように、勢いが大事な時もあります。知りませんけど。
+
+{{< highlight java "linenos=table, hl_lines=3" >}}
+public class Main {
+    public static void main(String... args) {
+       System.out.println("Hello");
+    }
+}
+{{< /highlight >}}
 
 ### Apex
 
