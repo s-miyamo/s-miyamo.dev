@@ -247,6 +247,8 @@
 <p>開くと以下のようなウィンドウが出てきます。おめでとうございます！これでApexを書く準備が整いました。環境を手に入れたあなたは鬼に金棒、どんな世界へも羽ばたいていけることでしょう。</p>
 <p><img src="apex1-02.png" alt="開発者コンソールを開く"></p>
 <p>次に画面上部のDebug &gt; Open Execute Anonymous Windowの順にボタンを押下します。
+この「Anonymous Window」はApexコードを簡単に実行できる優れものです。これは非常に便利なので使えるようになりましょう。
+なお、Ctrl+Eでも起動します。便利だね。
 <img src="apex1-06_anonymous.png" alt="apex1-06_anonymous"></p>
 <p>「Enter Apex Code」のウィンドウが出てくるので、以下のコードを入力し「Execute」ボタンを押下しましょう。
 <div class="highlight"><div class="chroma">
@@ -266,9 +268,28 @@
 <p>これでは分からないので、ログ出力エリアの下部にある「Debug Only」にチェックを入れてみましょう。
 <img src="apex1-09.png" alt="apex1-09"></p>
 <p>おお！「Hello World」と出力されているではありませんか！
-ここまでできたあなたは最高です。これは小さなことに見えますが、あなたにとっては偉大な一歩であります。</p>
+ここまでできたあなたは最高です。これは小さなことに見えますが、あなたにとっては偉大な一歩です。</p>
 <p>とはいえ、やはり文字を出力するだけでは味気ないのも事実です。
 それならSalesforceっぽいことをしてみましょう。</p>
+<p>###　顧客を作る
+Apexは本来VisualForceのコントローラ（いずれ説明します）やバッチ処理を行うために使用しますが、
+簡単なテストデータを作ったり、sandbox内のデータを更新したりする際にも活用できます。
+例として、顧客（Account)を作成してみましょう。</p>
+<p>先ほどの手順と同様に、Anonymous Windowを開いて以下のコードを入力し実行してみましょう。
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Account</span> <span class="n">acc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Account</span><span class="o">();</span>
+<span class="n">acc</span><span class="o">.</span><span class="na">FirstName</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">フグ田</span><span class="err">&#39;</span><span class="o">;</span>
+<span class="n">acc</span><span class="o">.</span><span class="na">LastName</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">サザエ</span><span class="err">&#39;</span><span class="o">;</span>
+<span class="n">insert</span> <span class="n">acc</span><span class="o">;</span></code></pre></td></tr></table>
+</div>
+</div></p>
 <div class="gdoc-page__anchorwrap"><h3 id="apexバッチ">Apexバッチ<a data-clipboard-text="https://s-miyamo.dev/posts/Salesforce/Apex/apex1/#apexバッチ" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Apexバッチ" href="#apexバッチ"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
 <p>この勢いのままコードを書いてみましょう。男と女のラブゲームと同じように、勢いが大事な時もあります。知りませんが。
 File &gt; New &gt; Apex Classとボタンを押下すると「New Apex class」のウィンドウが出てきます。
@@ -277,22 +298,6 @@ File &gt; New &gt; Apex Classとボタンを押下すると「New Apex class」�
 <img src="apex1-04.png" alt="apex1-03"></p>
 <p>開くと以下の画像のような状態になっていると思います。
 ここから、コードを修正していきましょう。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Hello&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></td></tr></table>
-</div>
-</div>
 <div class="gdoc-page__anchorwrap"><h3 id="apex">Apex<a data-clipboard-text="https://s-miyamo.dev/posts/Salesforce/Apex/apex1/#apex" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Apex" href="#apex"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
 <p>Apexを用いてコードを書く際は、「ガバナ制限」を特に考慮する必要があります。
 この「ガバナ制限」は、簡単に言うと「他の人も使っている環境でコードを動かすからあんまりピーキーなことすんなボケ」制限です。</p>

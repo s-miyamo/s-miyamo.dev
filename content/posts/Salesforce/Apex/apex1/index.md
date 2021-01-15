@@ -28,6 +28,8 @@ https://developer.salesforce.com/jpblogs/2016/04/developer-edition-signup/
 ![開発者コンソールを開く](apex1-02.png)
 
 次に画面上部のDebug > Open Execute Anonymous Windowの順にボタンを押下します。
+この「Anonymous Window」はApexコードを簡単に実行できる優れものです。これは非常に便利なので使えるようになりましょう。
+なお、Ctrl+Eでも起動します。便利だね。
 ![apex1-06_anonymous](apex1-06_anonymous.png)
 
 「Enter Apex Code」のウィンドウが出てくるので、以下のコードを入力し「Execute」ボタンを押下しましょう。
@@ -47,10 +49,27 @@ System.debug('Hello World');
 ![apex1-09](apex1-09.png)
 
 おお！「Hello World」と出力されているではありませんか！
-ここまでできたあなたは最高です。これは小さなことに見えますが、あなたにとっては偉大な一歩であります。
+ここまでできたあなたは最高です。これは小さなことに見えますが、あなたにとっては偉大な一歩です。
 
 とはいえ、やはり文字を出力するだけでは味気ないのも事実です。
 それならSalesforceっぽいことをしてみましょう。
+
+###　顧客を作る
+Apexは本来VisualForceのコントローラ（いずれ説明します）やバッチ処理を行うために使用しますが、
+簡単なテストデータを作ったり、sandbox内のデータを更新したりする際にも活用できます。
+例として、顧客（Account)を作成してみましょう。
+
+先ほどの手順と同様に、Anonymous Windowを開いて以下のコードを入力し実行してみましょう。
+{{< highlight java "linenos=table" >}}
+Account acc = new Account();
+acc.Name = 'フグ田 マスオ';
+insert acc;
+{{< /highlight >}}
+![apex1-10](apex1-10.png)
+
+
+実行を押下したら、Salesforceの画面に戻り、「取引先」タブを押下します。
+リストビューを「すべての取引先」にして先ほど登録した「フグ田 マスオ」がいることを確認しましょう。
 
 ### Apexバッチ
 
@@ -63,14 +82,6 @@ File > New > Apex Classとボタンを押下すると「New Apex class」のウ�
 
 開くと以下の画像のような状態になっていると思います。
 ここから、コードを修正していきましょう。
-
-{{< highlight java "linenos=table">}}
-public class Main {
-    public static void main(String... args) {
-       System.out.println("Hello");
-    }
-}
-{{< /highlight >}}
 
 ### Apex
 
