@@ -6,7 +6,7 @@
     <description>Recent content in Posts on s-miyamo.dev testPage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 09 Jan 2021 20:37:32 +0900</lastBuildDate><atom:link href="https://s-miyamo.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Jan 2021 22:02:19 +0900</lastBuildDate><atom:link href="https://s-miyamo.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test</title>
       <link>https://s-miyamo.dev/posts/test/</link>
@@ -14,15 +14,6 @@
       
       <guid>https://s-miyamo.dev/posts/test/</guid>
       <description>Postテスト ちゃんと投稿できているといいね</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://s-miyamo.dev/posts/Salesforce/Apex/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://s-miyamo.dev/posts/Salesforce/Apex/</guid>
-      <description></description>
     </item>
     
   </channel>

@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>s-miyamo.dev testPage</title>
-    <link>https://s-miyamo.dev/</link>
+    <link>https://s-miyamo.dev/posts/Salesforce/Apex/</link>
     <description>Recent content on s-miyamo.dev testPage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 11 Jan 2021 22:02:19 +0900</lastBuildDate><atom:link href="https://s-miyamo.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Jan 2021 22:02:19 +0900</lastBuildDate><atom:link href="https://s-miyamo.dev/posts/Salesforce/Apex/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apex1</title>
       <link>https://s-miyamo.dev/posts/Salesforce/Apex/apex1/</link>
@@ -30,15 +30,6 @@ Apexを使用する際、結構な頻度でオブジェクト（Oracleでいう�
       
       <guid>https://s-miyamo.dev/posts/Salesforce/Apex/test/</guid>
       <description>fogafoga</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>https://s-miyamo.dev/posts/test/</link>
-      <pubDate>Sat, 09 Jan 2021 20:37:32 +0900</pubDate>
-      
-      <guid>https://s-miyamo.dev/posts/test/</guid>
-      <description>Postテスト ちゃんと投稿できているといいね</description>
     </item>
     
   </channel>
