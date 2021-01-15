@@ -3,28 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://s-miyamo.dev/posts/Salesforce/Apex/apex1/</loc>
-    <lastmod>2021-01-11T22:02:19+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://s-miyamo.dev/posts/</loc>
-    <lastmod>2021-01-11T22:02:19+09:00</lastmod>
+    <lastmod>2021-01-09T20:37:32+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://s-miyamo.dev/</loc>
-    <lastmod>2021-01-11T22:02:19+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://s-miyamo.dev/posts/Salesforce/Apex/test/</loc>
-    <lastmod>2021-01-09T23:45:59+09:00</lastmod>
+    <lastmod>2021-01-09T20:37:32+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://s-miyamo.dev/posts/test/</loc>
     <lastmod>2021-01-09T20:37:32+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://s-miyamo.dev/posts/Salesforce/Apex/</loc>
   </url>
   
   <url>
