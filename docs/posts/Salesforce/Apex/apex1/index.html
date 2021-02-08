@@ -293,7 +293,7 @@
 <img src="apex1-10.png" alt="apex1-10"></p>
 <p><img src="apex1-11.png" alt="apex1-11"></p>
 <p>見事に顧客を作ることができました！素晴らしいですね。
-この3行だけで顧客を作成することができます。しかしこんな簡単なコードですが大事なことが詰まっています。
+この3行だけで顧客を作成することができます。しかしこんな簡単なコードですが大事なことが詰まっています。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -301,10 +301,87 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Account</span> <span class="n">acc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Account</span><span class="o">();</span></code></pre></td></tr></table>
 </div>
-</div></p>
+</div>
 <p>上記は何をしているかというと、Account型のsObject変数「acc」を宣言して、新規作成したsObjectインスタンスを割り当てています。
-いきなり訳の分からないワードが出てきました。のんびり、そうコーヒーとチョコでもつまみながらゆっくり読み解いていきましょう。</p>
+いきなり訳の分からないワードが出てきました。のんびり、定年後の温泉休暇くらいのんびりやっていきましょう。</p>
 <div class="gdoc-page__anchorwrap"><h2 id="sobjectの取り扱い">sObjectの取り扱い<a data-clipboard-text="https://s-miyamo.dev/posts/Salesforce/Apex/apex1/#sobjectの取り扱い" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor sObjectの取り扱い" href="#sobjectの取り扱い"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<p>上記ではAccount型のsObject型変数を定義していますが、カスタムオブジェクトを使用することも可能です。
+Custom型のsObject型変数を定義する場合は以下になります。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">CustomObj__c</span> <span class="n">cstm</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CustomObj__c</span><span class="o">();</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>リストやマップといったコレクションにsObjectを格納することも可能です。
+これは特に大事なことです。まずApexで大事なことはリストやマップにsObjectを格納できることを知っていることです。
+次に大事なことは、リストやマップにsObjectを格納できることを知っていることです。
+それくらい大事なことです。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">Account</span><span class="o">&gt;</span> <span class="n">accList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Account</span><span class="o">&gt;();</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>なぜここまで口酸っぱく言うのか、それはSOQLクエリの結果を格納したり一括処理の実行（いわゆるApexバッチ）で多用するからです。
+むしろこれを知らないと始まりません。ポケモンでマサラタウンから出ることが一生できないのと同じくらい始まりません。</p>
+<p>SOQLの結果を直接格納することも可能です。
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">Account</span><span class="o">&gt;</span> <span class="n">accList</span> <span class="o">=</span> <span class="o">[</span><span class="n">SELECT</span> <span class="n">id</span><span class="o">,</span> <span class="n">Name</span> <span class="n">FROM</span> <span class="n">Account</span> <span class="n">limit</span> <span class="n">100</span><span class="o">];</span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>以下のような使い方もできます。
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">Account</span><span class="o">&gt;</span> <span class="n">accList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Account</span><span class="o">&gt;();</span>
+<span class="n">Account</span> <span class="n">acc1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Account</span><span class="o">(</span><span class="n">Name</span><span class="o">=</span><span class="err">&#39;</span><span class="n">Miyamoto</span><span class="err">&#39;</span><span class="o">);</span>
+<span class="n">Account</span> <span class="n">acc2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Account</span><span class="o">(</span><span class="n">Name</span><span class="o">=</span><span class="err">&#39;</span><span class="n">Yamashita</span><span class="err">&#39;</span><span class="o">);</span>
+<span class="n">Account</span> <span class="n">acc3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Account</span><span class="o">(</span><span class="n">Name</span><span class="o">=</span><span class="err">&#39;</span><span class="n">Takeuchi</span><span class="err">&#39;</span><span class="o">);</span>
+
+<span class="n">accList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">acc1</span><span class="o">);</span>
+<span class="n">accList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">acc2</span><span class="o">);</span>
+<span class="n">accList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">acc3</span><span class="o">);</span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>上のような書き方が出来るならfor文もいけます。
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">Account</span><span class="o">&gt;</span> <span class="n">accList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Account</span><span class="o">&gt;();</span>
+
+<span class="k">for</span><span class="o">(</span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">3</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+    <span class="n">Account</span> <span class="n">acc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Account</span><span class="o">();</span>
+    <span class="n">acc</span><span class="o">.</span><span class="na">Name</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">account</span><span class="err">&#39;</span> <span class="o">+</span> <span class="n">i</span><span class="o">;</span>
+    <span class="n">accList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">acc</span><span class="o">);</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div></p>
 <div class="gdoc-page__anchorwrap"><h2 id="sobjectとコレクション">sObjectとコレクション<a data-clipboard-text="https://s-miyamo.dev/posts/Salesforce/Apex/apex1/#sobjectとコレクション" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor sObjectとコレクション" href="#sobjectとコレクション"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <div class="gdoc-page__anchorwrap"><h2 id="ガバナ制限">ガバナ制限<a data-clipboard-text="https://s-miyamo.dev/posts/Salesforce/Apex/apex1/#ガバナ制限" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor ガバナ制限" href="#ガバナ制限"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <p>Apexを用いてコードを書く際は、「ガバナ制限」を特に考慮する必要があります。
@@ -319,7 +396,7 @@ File &gt; New &gt; Apex Classとボタンを押下すると「New Apex class」�
 <p>「Please enter a name for your new Apex class」に「Batch_test」と入力し「OK」ボタンを押下します。
 <img src="apex1-04.png" alt="apex1-03"></p>
 <p>開くと以下の画像のような状態になっていると思います。
-ここから、コードを修正していきましょう。</p>
+ここからコードを修正していきましょう。</p>
 
 
       </div>

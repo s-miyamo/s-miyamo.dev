@@ -74,14 +74,68 @@ insert acc;
 
 見事に顧客を作ることができました！素晴らしいですね。
 この3行だけで顧客を作成することができます。しかしこんな簡単なコードですが大事なことが詰まっています。
+
 {{< highlight java "linenos=table" >}}
 Account acc = new Account();
 {{< /highlight >}}
 
 上記は何をしているかというと、Account型のsObject変数「acc」を宣言して、新規作成したsObjectインスタンスを割り当てています。
-いきなり訳の分からないワードが出てきました。のんびり、そうコーヒーとチョコでもつまみながらゆっくり読み解いていきましょう。
+いきなり訳の分からないワードが出てきました。のんびり、定年後の温泉休暇くらいのんびりやっていきましょう。
 
 ## sObjectの取り扱い
+
+上記ではAccount型のsObject型変数を定義していますが、カスタムオブジェクトを使用することも可能です。
+Custom型のsObject型変数を定義する場合は以下になります。
+
+{{< highlight java "linenos=table" >}}
+CustomObj__c cstm = new CustomObj__c();
+{{< /highlight >}}
+
+リストやマップといったコレクションにsObjectを格納することも可能です。
+これは特に大事なことです。まずApexで大事なことはリストやマップにsObjectを格納できることを知っていることです。
+次に大事なことは、リストやマップにsObjectを格納できることを知っていることです。
+それくらい大事なことです。
+
+{{< highlight java "linenos=table" >}}
+List<Account> accList = new List<Account>();
+{{< /highlight >}}
+
+なぜここまで口酸っぱく言うのか、それはSOQLクエリの結果を格納したり一括処理の実行（いわゆるApexバッチ）で多用するからです。
+むしろこれを知らないと始まりません。ポケモンでマサラタウンから出ることが一生できないのと同じくらい始まりません。
+
+SOQLの結果を直接格納することも可能です。
+{{< highlight java "linenos=table" >}}
+List<Account> accList = [SELECT id, Name FROM Account limit 100];
+{{< /highlight >}}
+
+以下のような使い方もできます。
+{{< highlight java "linenos=table" >}}
+List<Account> accList = new List<Account>();
+Account acc1 = new Account(Name='Miyamoto');
+Account acc2 = new Account(Name='Yamashita');
+Account acc3 = new Account(Name='Takeuchi');
+
+accList.add(acc1);
+accList.add(acc2);
+accList.add(acc3);
+
+{{< /highlight >}}
+
+上のような書き方が出来るならfor文もいけます。
+{{< highlight java "linenos=table" >}}
+List<Account> accList = new List<Account>();
+
+for(Integer i = 0; i < 3; i++){
+    Account acc = new Account();
+    acc.Name = 'account' + i;
+    accList.add(acc);
+}
+
+{{< /highlight >}}
+
+
+
+
 ## sObjectとコレクション
 
 ## ガバナ制限
@@ -106,5 +160,5 @@ File > New > Apex Classとボタンを押下すると「New Apex class」のウ�
 ![apex1-03](apex1-04.png)
 
 開くと以下の画像のような状態になっていると思います。
-ここから、コードを修正していきましょう。
+ここからコードを修正していきましょう。
 
