@@ -100,7 +100,7 @@ CustomObj__c cstm = new CustomObj__c();
 List<Account> accList = new List<Account>();
 {{< /highlight >}}
 
-なぜここまで口酸っぱく言うのか、それはSOQLクエリの結果を格納したり一括処理の実行（いわゆるApexバッチ）で多用するからです。
+なぜここまで口酸っぱく言うのか、それはSOQLクエリの結果を格納したり一括処理の実行で多用するからです。
 むしろこれを知らないと始まりません。ポケモンでマサラタウンから出ることが一生できないのと同じくらい始まりません。
 
 SOQLの結果を直接格納することも可能です。
@@ -133,20 +133,66 @@ for(Integer i = 0; i < 3; i++){
 
 {{< /highlight >}}
 
+sObjectの変数はそのままINSERTやUPDATEといったDML操作に渡すことができます。
+{{< highlight java "linenos=table" >}}
+Account acc = new Account();
+acc.Name = 'sano';
+insert acc;
+{{< /highlight >}}
 
+{{< highlight java "linenos=table" >}}
+List<Account> accList = new List<Account>();
 
+for(Integer i = 0; i < 3; i++){
+    Account acc = new Account();
+    acc.Name = 'account' + i;
+    accList.add(acc);
+}
 
-## sObjectとコレクション
+insert acc;
+
+{{< /highlight >}}
+
+{{< highlight java "linenos=table" >}}
+List<Account> accList = [SELECT id, Name FROM Account limit 100];
+accList[0].Name = '変更する';
+update accList
+{{< /highlight >}}
+
+{{< highlight java "linenos=table" >}}
+List<Account> accList = [SELECT id, Name FROM Account limit 100];
+
+for(Account acc : accList){
+    acc.Name = '名前を変えちゃえ';
+}
+update accList;
+
+{{< /highlight >}}
+
+マップも使用できます。※超便利
+{{< highlight java "linenos=table" >}}
+Map<Id, Account> accMap = new Map<Id, Account>([SELECT id, Name FROM Account limit 100]);
+
+for(Id key : accMap.keySet() ){
+    Account acc = accMap.get(key);
+    System.debug(acc);
+}
+{{< /highlight >}}
 
 ## ガバナ制限
 
 Apexを用いてコードを書く際は、「ガバナ制限」を特に考慮する必要があります。
 この「ガバナ制限」は、簡単に言うと「他の人も使っている環境でコードを動かすからあんまりピーキーなことすんなボケ」制限です。
 
-Apexを使用する際、結構な頻度でオブジェクト（Oracleでいうテーブル）に対しての操作も行われる印象があります。つまり結構な頻度でガバナ制限と向き合うことが
-
-
+Apexを使用する際、結構な頻度でオブジェクト（Oracleでいうテーブル）に対しての操作も行われる印象があります。つまり結構な頻度でガバナ制限と向き合うことになります。
 このガバナ制限を考慮せずに書いたコードは、大半の確立で落ちるか上手く動きません。
+
+https://developer.salesforce.com/docs/atlas.ja-jp.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_apexgov.htm
+
+以下の記事のほうが僕よりわかりやすく、詳しく書いてあります。
+気が向いたら宮本なりに書きますが、先ずは以下を参考いただいて...
+
+https://qiita.com/comefigo/items/48f05d8fe4a3959911f4
 
 ## テストクラス
 
