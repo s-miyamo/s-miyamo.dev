@@ -83,7 +83,7 @@ Salesforceの導入からカスタマイズ、外部ツールとの連携、リ�
 ここでは実務に置いて使用した言語・ツール・サービス等を列挙します。
 
 ## SaaS
-- Salesforce(詳細は後述)
+- Salesforce
 - ServiceNow
 - Informatica(IICS)
 - Alteryx
